@@ -24,14 +24,15 @@ namespace assignment1
             Console.WriteLine("4: Add new item to list");
         }
 
-        public string getUserInput()
+        public string getUserInput() // MAKE MORE EFFICIENT************************
         {
             string userInputString;
 
             Console.WriteLine("Enter in menu choice: ");
             userInputString = Console.ReadLine();
 
-            while (int.Parse(userInputString) < 0 && int.Parse(userInputString) > 5)
+            while (userInputString != "1" && userInputString != "2" && userInputString != "3" && 
+                userInputString != "4")
             {
                 Console.WriteLine();
                 Console.WriteLine("Improper Menu choice.");

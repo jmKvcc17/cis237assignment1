@@ -15,6 +15,25 @@ namespace assignment1
     {
         static void Main(string[] args)
         {
+            string userChoice;
+
+            UserInterface ui = new UserInterface();
+
+            ui.DisplayMenu();
+            userChoice = ui.getUserInput();
+
+            switch (userChoice)
+            {
+                case "1":
+                    Console.WriteLine("Choice 1");
+                    break;
+                default:
+                    Console.WriteLine("Error");
+                    break;
+                
+            }
+
+            Console.ReadLine();
         }
     }
 }
