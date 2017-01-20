@@ -27,6 +27,8 @@ namespace assignment1
                 case "1":
                     Console.WriteLine("Choice 1");
                     break;
+                case "5":
+                    break;
                 default:
                     Console.WriteLine("Error");
                     break;
