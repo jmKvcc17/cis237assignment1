@@ -8,7 +8,7 @@ namespace assignment1
 {
     class WineItemCollection
     {
-        //private WineItem[] winItems = new WineItem[];
+        private WineItem[] winItemsArray = new WineItem[Constants.WINE_ITEM_ARRAY];
 
         public WineItemCollection()
         {
@@ -28,9 +28,18 @@ namespace assignment1
             return 1;
         }
 
-        public void GetPrintString() // ?????????????????
+        public void GetPrintString() 
         {
+            string outputString = "";
 
+            foreach(WineItem wineItem in winItemsArray)
+            {
+                if (wineItem != null)
+                {
+                    outputString += wineItem.ToString() +
+                        Environment.NewLine;
+                }
+            }
         }
 
     }

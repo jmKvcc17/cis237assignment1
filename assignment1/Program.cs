@@ -9,8 +9,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
+
 namespace assignment1
 {
+    // Class to hold global constants
+    static class Constants
+    {
+        public const int WINE_ITEM_ARRAY = 5000;
+    }
+
     class Program
     {
         static void Main(string[] args)
@@ -18,6 +26,9 @@ namespace assignment1
             string userChoice;
 
             UserInterface ui = new UserInterface();
+            CVSProcessor dataProcess = new CVSProcessor();
+
+            
 
             ui.DisplayMenu();
             userChoice = ui.getUserInput();
