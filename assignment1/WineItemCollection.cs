@@ -49,10 +49,6 @@ namespace assignment1
                     outputString += wineItem.ToString() +
                         Environment.NewLine;
                 }
-                //else
-                //{
-                //    Console.WriteLine("There is nothing to display.");
-                //}
             }
         }
 
