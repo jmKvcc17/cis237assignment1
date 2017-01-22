@@ -8,7 +8,7 @@ namespace assignment1
 {
     class WineItemCollection
     {
-        private WineItem[] winItemsArray = new WineItem[Constants.WINE_ITEM_ARRAY];
+        public static WineItem[] winItemsArray = new WineItem[Constants.WINE_ITEM_ARRAY]; //*********************
 
         public WineItemCollection()
         {
