@@ -8,7 +8,9 @@ namespace assignment1
 {
     class WineItemCollection
     {
-        public static WineItem[] winItemsArray = new WineItem[Constants.WINE_ITEM_ARRAY]; //*********************
+        private  WineItem[] _wineItemsArray = new WineItem[Constants.WINE_ITEM_ARRAY]; //*********************
+        private CVSProcessor process = new CVSProcessor();
+
 
         public WineItemCollection()
         {
@@ -19,6 +21,11 @@ namespace assignment1
         public void AddItem(string Id, string Description, string Pack)
         {
 
+        }
+
+        public void LoadItems()
+        {
+            process.ReadFromCSV(ref _wineItemsArray);
         }
 
         public int Search(string Id, string Description, string Pack)
@@ -32,13 +39,20 @@ namespace assignment1
         {
             string outputString = "";
 
-            foreach(WineItem wineItem in winItemsArray)
+            
+
+            foreach (WineItem wineItem in _wineItemsArray)
             {
                 if (wineItem != null)
                 {
+                    Console.WriteLine("Hello");
                     outputString += wineItem.ToString() +
                         Environment.NewLine;
                 }
+                //else
+                //{
+                //    Console.WriteLine("There is nothing to display.");
+                //}
             }
         }
 

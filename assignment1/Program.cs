@@ -26,7 +26,8 @@ namespace assignment1
             string userChoice;
 
             UserInterface ui = new UserInterface();
-            CVSProcessor dataProcess = new CVSProcessor();
+            //CVSProcessor dataProcess = new CVSProcessor();
+            WineItemCollection wineItemCollection = new WineItemCollection();
 
             
 
@@ -37,6 +38,10 @@ namespace assignment1
             {
                 case "1":
                     Console.WriteLine("Choice 1");
+                   // dataProcess.
+                    break;
+                case "2":
+                    wineItemCollection.GetPrintString();
                     break;
                 case "5":
                     break;
