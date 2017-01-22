@@ -45,7 +45,7 @@ namespace assignment1
             {
                 if (wineItem != null)
                 {
-                    Console.WriteLine("Hello");
+                    //Console.WriteLine("Hello");
                     outputString += wineItem.ToString() +
                         Environment.NewLine;
                 }

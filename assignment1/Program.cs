@@ -29,28 +29,33 @@ namespace assignment1
             //CVSProcessor dataProcess = new CVSProcessor();
             WineItemCollection wineItemCollection = new WineItemCollection();
 
-            
+
 
             ui.DisplayMenu();
             userChoice = ui.getUserInput();
 
-            switch (userChoice)
-            {
-                case "1":
-                    Console.WriteLine("Choice 1");
-                   // dataProcess.
-                    break;
-                case "2":
-                    wineItemCollection.GetPrintString();
-                    break;
-                case "5":
-                    break;
-                default:
-                    Console.WriteLine("Error");
-                    break;
-                
-            }
+            while (userChoice != "6")
+            { 
+                switch (userChoice)
+                {
+                    case "1":
+                        Console.WriteLine("Choice 1");
+                        wineItemCollection.LoadItems();
+                        break;
+                    case "2":
+                        wineItemCollection.GetPrintString();
+                        break;
+                    case "5":
+                        break;
+                    default:
+                        Console.WriteLine("Error");
+                        break;
 
+                }
+
+                ui.DisplayMenu();
+                userChoice = ui.getUserInput();
+            }
             Console.ReadLine();
         }
     }
