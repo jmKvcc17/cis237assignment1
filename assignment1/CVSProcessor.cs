@@ -19,8 +19,12 @@ namespace assignment1
 
         public void ReadFromCSV(ref WineItem[] wineItemCollectionArray)
         {
-            string path = @"c:\Users\Jesse\cis237\cis237assignment1\datafiles\WineList.csv"; // Finds the wine list file and stores it in path
-            inputFile = File.OpenText(path);
+            // Finds the wine list file and stores it in path
+            string fileName = @"O:\cis2378\cis237assignment1\dataFiles\WineList.csv";
+
+            inputFile = File.OpenText(fileName);
+            
+            
 
             string HoldString = "";
             string id = "";
@@ -33,6 +37,7 @@ namespace assignment1
                 {
                     HoldString = inputFile.ReadLine();
                     Split(ref HoldString, ref id, ref description, ref pack);
+                   // Console.WriteLine(HoldString);
                     //wineItemCollectionArray[index].ID = id;
                     //wineItemCollectionArray[index].Description = description;
                     //wineItemCollectionArray[index].Pack = pack;

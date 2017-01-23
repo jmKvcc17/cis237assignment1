@@ -24,6 +24,7 @@ namespace assignment1
         static void Main(string[] args)
         {
             string userChoice;
+            bool choice1Bool = false;
 
             UserInterface ui = new UserInterface();
             //CVSProcessor dataProcess = new CVSProcessor();
@@ -39,8 +40,16 @@ namespace assignment1
                 switch (userChoice)
                 {
                     case "1":
-                        Console.WriteLine("Choice 1");
-                        wineItemCollection.LoadItems();
+                        // Check if choice 1 has not been used, will execute load once
+                        if (choice1Bool == false)
+                        {
+                            Console.WriteLine("Choice 1"); // *********************
+                            wineItemCollection.LoadItems();
+                            choice1Bool = true;
+                        }
+                        else
+                            Console.WriteLine("You cannot load twice"); //**********************
+                        
                         break;
                     case "2":
                         wineItemCollection.GetPrintString();
