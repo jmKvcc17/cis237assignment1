@@ -52,5 +52,23 @@ namespace assignment1
         {
             Console.WriteLine(WineItemString);
         }
+
+        public void ErrorMessage()
+        {
+            Console.WriteLine("You cannot load the file twice");
+            Console.WriteLine();
+        }
+
+        public string GetSearchId()
+        {
+            string userSeachId = "";
+
+            Console.WriteLine("Enter in the 5-digit code to search for: ");
+            userSeachId = Console.ReadLine();
+
+            //while (userSeachId.Length != 5 && userSeachId.)
+
+            return userSearchId;
+        }
     }
 }

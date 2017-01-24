@@ -47,8 +47,9 @@ namespace assignment1
                             choice1Bool = true;
                         }
                         else
-                            Console.WriteLine("You cannot load twice"); //**********************
-                        
+                        {
+                            ui.ErrorMessage();
+                        }   
                         break;
                     case "2":
                         wineItemCollection.GetPrintString();
