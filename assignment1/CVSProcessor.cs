@@ -9,15 +9,17 @@ namespace assignment1
 {
     class CVSProcessor
     {
-        private StreamReader inputFile;
-        private StreamWriter outputFile;
+        private StreamReader inputFile; // handles reading data
+        private StreamWriter outputFile; // handles writing data
         //private WineItemCollection[] wineItemsArray = new WineItemCollection[Constants.WINE_ITEM_ARRAY];
         
+        // default constructor
         public CVSProcessor()
         {
             
         }
 
+        // Reads the CSV file, stores the data in wineItemArray
         public void ReadFromCSV(WineItem[] wineItemCollectionArray)
         {
             // Finds the wine list file and stores it in path
@@ -37,7 +39,7 @@ namespace assignment1
                 if (!inputFile.EndOfStream)
                 {
                     HoldString = inputFile.ReadLine();
-                    Split(ref HoldString, ref id, ref description, ref pack);
+                    Split(ref HoldString, ref id, ref description, ref pack); // splits the hold string
                     wineItemCollectionArray[index] = new WineItem(id, description, pack);
                 }
             }
@@ -45,6 +47,7 @@ namespace assignment1
             inputFile.Close();
         }
 
+        // Writes the added item to the wineItemCollectionArray
         public void WriteToCVS(WineItem[] wineItemCollectionArray, int index)
         {
             string fileName = @"../../../dataFiles/WineList.csv";
