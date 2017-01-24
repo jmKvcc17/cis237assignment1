@@ -38,12 +38,7 @@ namespace assignment1
                 {
                     HoldString = inputFile.ReadLine();
                     Split(ref HoldString, ref id, ref description, ref pack);
-                    // Console.WriteLine(HoldString);
-                    //wineItemCollectionArray[index].ID = id;
-                    //wineItemCollectionArray[index].Description = description;
-                    //wineItemCollectionArray[index].Pack = pack;
                     wineItemCollectionArray[index] = new WineItem(id, description, pack);
-                    
                 }
             }
 

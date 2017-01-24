@@ -19,14 +19,24 @@ namespace assignment1
         }
 
         // Public Methods
-        public void AddItem()
+        public void AddItem() //*************************
         {
             string id = "", description = "", pack = "";
             int newIndex;
+            bool isEqual = false;
 
-            newIndex = FindLastIndex() + 1;
+            newIndex = (FindLastIndex() + 1);
 
             ui.GetAddInfo(ref id, ref description, ref pack);
+
+            isEqual = CompareID(id);
+
+            while(isEqual)
+            {
+                ui.getID(ref id);
+                isEqual = CompareID(id);
+            }
+
 
             _wineItemsArray[newIndex] = new WineItem(id, description, pack);
 
@@ -38,7 +48,7 @@ namespace assignment1
             process.ReadFromCSV(_wineItemsArray);
         }
 
-        public void Search(string uSearchString) // ************************
+        public void Search(string uSearchString) // ************************Array not storing new items?
         {
             int position = -1;
             int lastIndex = FindLastIndex();
@@ -82,5 +92,17 @@ namespace assignment1
             ui.OutputString(outputString);
         }
 
+        private bool CompareID(string userID)
+        {
+            bool isEqual = false;
+
+            for (int index = 0; index < FindLastIndex(); index++)
+            {
+                if (string.Compare(_wineItemsArray[index].ID, userID) == 0)
+                    isEqual = true;
+            }
+
+            return isEqual;
+        }
     }
 }

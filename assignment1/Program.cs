@@ -28,7 +28,6 @@ namespace assignment1
             string userId;
 
             UserInterface ui = new UserInterface();
-            //CVSProcessor dataProcess = new CVSProcessor();
             WineItemCollection wineItemCollection = new WineItemCollection();
 
 
@@ -60,9 +59,17 @@ namespace assignment1
                         wineItemCollection.Search(userId);
                         break;
                     case "4":
-                        wineItemCollection.AddItem();
+                        if (choice1Bool == false)
+                        {
+                            ui.AddError();
+                        }
+                        else
+                            wineItemCollection.AddItem();
                         break;
                     case "5":
+                        break;
+                    case "6":
+                        ui.ClearConsole();
                         break;
                     default:
                         Console.WriteLine("Error");

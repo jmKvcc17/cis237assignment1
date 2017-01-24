@@ -24,6 +24,7 @@ namespace assignment1
             Console.WriteLine("3: Search for item by id");
             Console.WriteLine("4: Add new item to list");
             Console.WriteLine("5: Exit");
+            Console.WriteLine("6: Clear the console");
             Console.WriteLine();
         }
 
@@ -35,7 +36,7 @@ namespace assignment1
             userInputString = Console.ReadLine();
 
             while (userInputString != "1" && userInputString != "2" && userInputString != "3" && 
-                userInputString != "4" && userInputString != "5")
+                userInputString != "4" && userInputString != "5" && userInputString != "6")
             {
                 Console.WriteLine();
                 Console.WriteLine("Improper Menu choice.");
@@ -93,8 +94,10 @@ namespace assignment1
 
         public void GetAddInfo(ref string Id, ref string Description, ref string Pack)
         {
+
             Console.WriteLine("Enter in product ID: ");
             Id = Console.ReadLine();
+
 
             while (Id.Length != 5)
             {
@@ -108,6 +111,34 @@ namespace assignment1
 
             Console.WriteLine("Enter in the pack: ");
             Pack = Console.ReadLine();
+        }
+
+        public void getID(ref string Id)
+        {
+            Console.WriteLine();
+            Console.WriteLine("ID entered matches another ID.");
+            Console.WriteLine("Enter in new ID:");
+            Id = Console.ReadLine();
+
+            while (Id.Length != 5)
+            {
+                Console.WriteLine();
+                Console.WriteLine("Enter in product ID: ");
+                Id = Console.ReadLine();
+                Console.WriteLine();
+            }
+        }
+
+        public void ClearConsole()
+        {
+            Console.WriteLine("Clearing Console...");
+            System.Threading.Thread.Sleep(1500);
+            Console.Clear();
+        }
+
+        public void AddError()
+        {
+            Console.WriteLine("You cannot add to the database before loading it.");
         }
     }
 }
