@@ -17,12 +17,14 @@ namespace assignment1
 
         public void DisplayMenu()
         {
+            Console.WriteLine();
             Console.WriteLine("Menu List: ");
             Console.WriteLine("1: Load CSV File (Can only be done once)");
             Console.WriteLine("2: Print entire list of wine items");
             Console.WriteLine("3: Search for item by id");
             Console.WriteLine("4: Add new item to list");
             Console.WriteLine("5: Exit");
+            Console.WriteLine();
         }
 
         public string getUserInput() // MAKE MORE EFFICIENT************************
@@ -40,8 +42,10 @@ namespace assignment1
 
                 DisplayMenu();
 
+                Console.WriteLine();
                 Console.WriteLine("Enter in menu choice: ");
                 userInputString = Console.ReadLine();
+                Console.WriteLine();
        
             }
 
@@ -66,9 +70,43 @@ namespace assignment1
             Console.WriteLine("Enter in the 5-digit code to search for: ");
             userSeachId = Console.ReadLine();
 
-            //while (userSeachId.Length != 5 && userSeachId.)
+            while (userSeachId.Length != 5)
+            {
+                Console.WriteLine("Error. Input must be 5 digits and a number.");
+                Console.WriteLine();
 
-            return userSearchId;
+                Console.WriteLine("Enter in the 5-digit code to search for: ");
+                userSeachId = Console.ReadLine();
+            }
+
+            return userSeachId;
+        }
+
+        public void ShowSearchResult(WineItem[] wineItemArray, int searchIndex)
+        {
+            if (searchIndex == -1)
+                Console.WriteLine("Item was not found.");
+            else
+                Console.WriteLine("ID match, Product description: {0}\n\t  Pack: {1}", 
+                    wineItemArray[searchIndex].Description, wineItemArray[searchIndex].Pack);
+        }
+
+        public void GetAddInfo(ref string Id, ref string Description, ref string pack)
+        {
+            Console.WriteLine("Enter in product ID: ");
+            Id = Console.ReadLine();
+
+            while (Id.Length != 5)
+            {
+                Console.WriteLine();
+                Console.WriteLine("Enter in product ID: ");
+                Id = Console.ReadLine();
+            }
+
+            Console.WriteLine("Enter in the description: ");
+            Description = Console.ReadLine();
+
+            Console.WriteLine("Enter in the pack: ");
         }
     }
 }

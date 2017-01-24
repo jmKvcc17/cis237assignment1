@@ -25,6 +25,7 @@ namespace assignment1
         {
             string userChoice;
             bool choice1Bool = false;
+            string userId;
 
             UserInterface ui = new UserInterface();
             //CVSProcessor dataProcess = new CVSProcessor();
@@ -53,6 +54,10 @@ namespace assignment1
                         break;
                     case "2":
                         wineItemCollection.GetPrintString();
+                        break;
+                    case "3":
+                        userId = ui.GetSearchId();
+                        wineItemCollection.Search(userId);
                         break;
                     case "5":
                         break;

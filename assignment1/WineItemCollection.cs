@@ -29,31 +29,46 @@ namespace assignment1
             process.ReadFromCSV(_wineItemsArray);
         }
 
-        public int Search(string Id, string Description, string Pack)
+        public void Search(string uSearchString)
         {
-            int foundItem;
+            int position = -1;
 
-            return 1;
+                for (int i = 0; i < FindLastIndex(); i++)
+                {
+                    if (String.Compare(_wineItemsArray[i].ID, uSearchString) == 0)
+                    {
+                        position = i;
+                    }  
+                }
+
+            ui.ShowSearchResult(_wineItemsArray, position);
+        }
+
+        private int FindLastIndex()
+        {
+            int index = 0;
+
+            foreach(WineItem item in _wineItemsArray)
+            {
+                if (item != null)
+                    index++;
+            }
+
+            return (index - 1);
         }
 
         public void GetPrintString() 
         {
             string outputString = "";
 
-            
-
             foreach (WineItem wineItem in _wineItemsArray)
             {
                 if (wineItem != null)
                 {
-                    //Console.WriteLine("Hello");
                     outputString += wineItem.ToString() +
                         Environment.NewLine;
-
                 }
-                
             }
-
             ui.OutputString(outputString);
         }
 
