@@ -68,6 +68,7 @@ namespace assignment1
             // index and wineItemsArray as parameters 
         }
 
+        // Counts all the items in the WineItemArray array and returns it
         private int FindLastIndex()
         {
             int index = 0;
@@ -81,6 +82,7 @@ namespace assignment1
             return index;
         }
 
+        // Uses the output string to put each wine item on a separate line
         public void GetPrintString() 
         {
             string outputString = "";
@@ -96,6 +98,8 @@ namespace assignment1
             ui.OutputString(outputString);
         }
 
+        // Accepts the ID as a parameter, and compares it to every 
+        // Id in the wineItemsArray, returns true if match
         private bool CompareID(string userID)
         {
             bool isEqual = false;

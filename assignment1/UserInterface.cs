@@ -6,15 +6,17 @@ using System.Threading.Tasks;
 
 namespace assignment1
 {
+    // Gets the input from the user, outputs 
+    // data to the console
     class UserInterface
     {
-        // Backing fields
 
         public UserInterface()
         {
 
         }
-
+        
+        // Displays the menu items
         public void DisplayMenu()
         {
             Console.WriteLine();
@@ -28,7 +30,9 @@ namespace assignment1
             Console.WriteLine();
         }
 
-        public string getUserInput() // MAKE MORE EFFICIENT************************
+        // Gets the users input for the menu in Program.cs
+        // Returns the userInputString
+        public string getUserInput()
         {
             string userInputString;
 
@@ -53,17 +57,20 @@ namespace assignment1
             return userInputString;
         }
 
+        // Ouputs the wineItemArray from the GetPrintString function
         public void OutputString(string WineItemString)
         {
             Console.WriteLine(WineItemString);
         }
 
+        // Prints error when trying to load the file twice
         public void ErrorMessage()
         {
             Console.WriteLine("You cannot load the file twice");
             Console.WriteLine();
         }
 
+        // Gets the id to search for, returns it to userID in Program.cs
         public string GetSearchId()
         {
             string userSeachId = "";
@@ -83,6 +90,8 @@ namespace assignment1
             return userSeachId;
         }
 
+        // Accepts the wineItemArray and searchIndex, displays the searched for
+        // wineItem, displays if it was not found
         public void ShowSearchResult(WineItem[] wineItemArray, int searchIndex)
         {
             if (searchIndex == -1)
@@ -92,6 +101,8 @@ namespace assignment1
                     wineItemArray[searchIndex].Description, wineItemArray[searchIndex].Pack);
         }
 
+        // Gets the Id, Description, and Pack from the user in order to add it to the
+        // array and file
         public void GetAddInfo(ref string Id, ref string Description, ref string Pack)
         {
 
@@ -113,6 +124,8 @@ namespace assignment1
             Pack = Console.ReadLine();
         }
 
+        // Used to get the ID again if the user entered an ID
+        // that already exists
         public void getID(ref string Id)
         {
             Console.WriteLine();
@@ -129,6 +142,8 @@ namespace assignment1
             }
         }
 
+        // Clears the console if the user chooses
+        // menu option 6
         public void ClearConsole()
         {
             Console.WriteLine("Clearing Console...");
@@ -136,6 +151,8 @@ namespace assignment1
             Console.Clear();
         }
 
+        // Diplays error message if trying to add to the array
+        // before loading it
         public void AddError()
         {
             Console.WriteLine("You cannot add to the database before loading it.");
