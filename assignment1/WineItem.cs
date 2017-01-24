@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace assignment1
 {
+    // WineItem holds the id, description, and pack from each entry in the
+    // CSV file
     class WineItem
     {
         // Backing fields
@@ -19,6 +21,7 @@ namespace assignment1
 
         }
 
+        // Overloaded constructor that accepts ID, Description, and Pack
         public WineItem(string ID, string Description, string Pack)
         {
             _id = ID;
@@ -26,18 +29,21 @@ namespace assignment1
             _pack = Pack;
         }
 
+        // ID property
         public string ID
         {
             get { return _id; }
             set { _id = value; }
         }
 
+        // Description property
         public string Description
         {
             get { return _description; }
             set { _description = value; }
         }
 
+        // Pack property
         public string Pack
         {
             get { return _pack; }
@@ -45,6 +51,7 @@ namespace assignment1
         }
 
         // Public Methods
+        // Overrides ToString to return wine entry
         public override string ToString()
         {
             return _id + " " + _description + " " + _pack;

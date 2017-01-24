@@ -16,22 +16,23 @@ namespace assignment1
     // Class to hold global constants
     static class Constants
     {
-        public const int WINE_ITEM_ARRAY = 5000;
+        public const int WINE_ITEM_ARRAY = 5000; // max size of the wineItemArray
     }
 
     class Program
     {
         static void Main(string[] args)
         {
-            string userChoice;
-            bool choice1Bool = false;
-            string userId;
+            string userChoice; // variable that stores the user's menu choice
+            bool choice1Bool = false; // bool flag that is used to store if 
+            // menu choice 1 has been used
+            string userId; // stores the userID
 
-            UserInterface ui = new UserInterface();
-            WineItemCollection wineItemCollection = new WineItemCollection();
+            UserInterface ui = new UserInterface(); // create new ui object
+            WineItemCollection wineItemCollection = new WineItemCollection(); // create new wineItemCollection object
 
 
-
+            // Display the menu and get the user input
             ui.DisplayMenu();
             userChoice = ui.getUserInput();
 
@@ -42,14 +43,12 @@ namespace assignment1
                     case "1":
                         // Check if choice 1 has not been used, will execute load once
                         if (choice1Bool == false)
-                        {                          
+                        {
                             wineItemCollection.LoadItems();
                             choice1Bool = true;
-                        }
+                        }                
                         else
-                        {
                             ui.ErrorMessage();
-                        }   
                         break;
                     case "2":
                         wineItemCollection.GetPrintString();
@@ -60,9 +59,7 @@ namespace assignment1
                         break;
                     case "4":
                         if (choice1Bool == false)
-                        {
                             ui.AddError();
-                        }
                         else
                             wineItemCollection.AddItem();
                         break;
