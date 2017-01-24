@@ -35,15 +35,14 @@ namespace assignment1
             ui.DisplayMenu();
             userChoice = ui.getUserInput();
 
-            while (userChoice != "6")
+            while (userChoice != "5")
             { 
                 switch (userChoice)
                 {
                     case "1":
                         // Check if choice 1 has not been used, will execute load once
                         if (choice1Bool == false)
-                        {
-                            Console.WriteLine("Choice 1"); // *********************
+                        {                          
                             wineItemCollection.LoadItems();
                             choice1Bool = true;
                         }

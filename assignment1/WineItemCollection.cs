@@ -10,6 +10,7 @@ namespace assignment1
     {
         private  WineItem[] _wineItemsArray = new WineItem[Constants.WINE_ITEM_ARRAY]; //*********************
         private CVSProcessor process = new CVSProcessor();
+        private UserInterface ui = new UserInterface();
 
 
         public WineItemCollection()
@@ -25,7 +26,7 @@ namespace assignment1
 
         public void LoadItems()
         {
-            process.ReadFromCSV(ref _wineItemsArray);
+            process.ReadFromCSV(_wineItemsArray);
         }
 
         public int Search(string Id, string Description, string Pack)
@@ -48,8 +49,12 @@ namespace assignment1
                     //Console.WriteLine("Hello");
                     outputString += wineItem.ToString() +
                         Environment.NewLine;
+
                 }
+                
             }
+
+            ui.OutputString(outputString);
         }
 
     }

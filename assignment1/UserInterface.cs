@@ -47,5 +47,10 @@ namespace assignment1
 
             return userInputString;
         }
+
+        public void OutputString(string WineItemString)
+        {
+            Console.WriteLine(WineItemString);
+        }
     }
 }

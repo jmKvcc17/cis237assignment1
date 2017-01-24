@@ -17,16 +17,16 @@ namespace assignment1
             
         }
 
-        public void ReadFromCSV(ref WineItem[] wineItemCollectionArray)
+        public void ReadFromCSV(WineItem[] wineItemCollectionArray)
         {
             // Finds the wine list file and stores it in path
-            string fileName = @"O:\cis2378\cis237assignment1\dataFiles\WineList.csv";
+            string fileName = @"../../../dataFiles/WineList.csv";
 
             inputFile = File.OpenText(fileName);
             
             
 
-            string HoldString = "";
+            string HoldString = ""; // stores the wine list entry
             string id = "";
             string description = "";
             string pack = "";
@@ -37,7 +37,7 @@ namespace assignment1
                 {
                     HoldString = inputFile.ReadLine();
                     Split(ref HoldString, ref id, ref description, ref pack);
-                   // Console.WriteLine(HoldString);
+                    // Console.WriteLine(HoldString);
                     //wineItemCollectionArray[index].ID = id;
                     //wineItemCollectionArray[index].Description = description;
                     //wineItemCollectionArray[index].Pack = pack;
