@@ -19,9 +19,18 @@ namespace assignment1
         }
 
         // Public Methods
-        public void AddItem(string Id, string Description, string Pack)
+        public void AddItem()
         {
+            string id = "", description = "", pack = "";
+            int newIndex;
 
+            newIndex = FindLastIndex() + 1;
+
+            ui.GetAddInfo(ref id, ref description, ref pack);
+
+            _wineItemsArray[newIndex] = new WineItem(id, description, pack);
+
+            process.WriteToCVS(_wineItemsArray, newIndex);
         }
 
         public void LoadItems()
@@ -29,11 +38,12 @@ namespace assignment1
             process.ReadFromCSV(_wineItemsArray);
         }
 
-        public void Search(string uSearchString)
+        public void Search(string uSearchString) // ************************
         {
             int position = -1;
+            int lastIndex = FindLastIndex();
 
-                for (int i = 0; i < FindLastIndex(); i++)
+                for (int i = 0; i < lastIndex; i++)
                 {
                     if (String.Compare(_wineItemsArray[i].ID, uSearchString) == 0)
                     {
@@ -54,7 +64,7 @@ namespace assignment1
                     index++;
             }
 
-            return (index - 1);
+            return index;
         }
 
         public void GetPrintString() 

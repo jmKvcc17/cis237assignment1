@@ -10,6 +10,7 @@ namespace assignment1
     class CVSProcessor
     {
         private StreamReader inputFile;
+        private StreamWriter outputFile;
         //private WineItemCollection[] wineItemsArray = new WineItemCollection[Constants.WINE_ITEM_ARRAY];
         
         public CVSProcessor()
@@ -47,6 +48,17 @@ namespace assignment1
             }
 
             inputFile.Close();
+        }
+
+        public void WriteToCVS(WineItem[] wineItemCollectionArray, int index)
+        {
+            string fileName = @"../../../dataFiles/WineList.csv";
+
+            outputFile = File.AppendText(fileName);
+            outputFile.WriteLine("{0},{1},{2}", wineItemCollectionArray[index].ID, wineItemCollectionArray[index].Description,
+                wineItemCollectionArray[index].Pack);
+
+            outputFile.Close();
         }
 
         // Takes each line from CSV and splits them into individual variables from delimiter

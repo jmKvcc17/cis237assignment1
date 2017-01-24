@@ -91,7 +91,7 @@ namespace assignment1
                     wineItemArray[searchIndex].Description, wineItemArray[searchIndex].Pack);
         }
 
-        public void GetAddInfo(ref string Id, ref string Description, ref string pack)
+        public void GetAddInfo(ref string Id, ref string Description, ref string Pack)
         {
             Console.WriteLine("Enter in product ID: ");
             Id = Console.ReadLine();
@@ -107,6 +107,7 @@ namespace assignment1
             Description = Console.ReadLine();
 
             Console.WriteLine("Enter in the pack: ");
+            Pack = Console.ReadLine();
         }
     }
 }

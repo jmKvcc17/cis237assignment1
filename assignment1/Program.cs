@@ -59,6 +59,9 @@ namespace assignment1
                         userId = ui.GetSearchId();
                         wineItemCollection.Search(userId);
                         break;
+                    case "4":
+                        wineItemCollection.AddItem();
+                        break;
                     case "5":
                         break;
                     default:
