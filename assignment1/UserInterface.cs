@@ -66,7 +66,7 @@ namespace assignment1
             Console.WriteLine("Enter in the 5-digit code to search for: ");
             userSeachId = Console.ReadLine();
 
-            //while (userSeachId.Length != 5 && userSeachId.)
+            // while (userSeachId.Length != 5 && userSeachId.)
 
             return userSearchId;
         }
