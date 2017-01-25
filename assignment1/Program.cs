@@ -46,6 +46,7 @@ namespace assignment1
                         if (choice1Bool == false)
                         {
                             wineItemCollection.LoadItems();
+                            ui.Choice1Message();
                             choice1Bool = true;
                         }                
                         else
@@ -62,7 +63,10 @@ namespace assignment1
                         if (choice1Bool == false)
                             ui.AddError();
                         else
+                        {
                             wineItemCollection.AddItem();
+                            ui.AddedChoice();
+                        }   
                         break;
                     case "5":
                         break;
@@ -78,7 +82,8 @@ namespace assignment1
                 ui.DisplayMenu();
                 userChoice = ui.getUserInput();
             }
-            Console.ReadLine();
+
+            ui.ExitMessage(); // Exits the program
         }
     }
 }

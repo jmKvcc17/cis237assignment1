@@ -175,5 +175,24 @@ namespace assignment1
         {
             Console.WriteLine("You cannot add to the database before loading it.");
         }
+
+        public void Choice1Message()
+        {
+            Console.WriteLine();
+            Console.WriteLine("CSV File Loaded.");
+        }
+
+        public void AddedChoice()
+        {
+            Console.WriteLine();
+            Console.WriteLine("Entry has been added.");
+        }
+
+        public void ExitMessage()
+        {
+            Console.WriteLine();
+            Console.WriteLine("Press enter to exit.");
+            Console.ReadLine();
+        }
     }
 }
