@@ -1,6 +1,7 @@
 ﻿// Jesse Meachum
 // Date: 1/19/17
 // CIS 237
+// Other sources used: Visual C# 2012 Third Edition by Tony Gradis
 
 
 using System;

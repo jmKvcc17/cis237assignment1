@@ -54,7 +54,7 @@ namespace assignment1
         // Overrides ToString to return wine entry
         public override string ToString()
         {
-            return _id + " " + _description + " " + _pack;
+            return "ID: " + _id + Environment.NewLine + "  -Description: " + _description + Environment.NewLine + "  -Pack: " + _pack;
         }
 
     }

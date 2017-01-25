@@ -94,6 +94,8 @@ namespace assignment1
         // wineItem, displays if it was not found
         public void ShowSearchResult(WineItem[] wineItemArray, int searchIndex)
         {
+            Console.WriteLine();
+
             if (searchIndex == -1)
                 Console.WriteLine("Item was not found.");
             else
@@ -120,8 +122,24 @@ namespace assignment1
             Console.WriteLine("Enter in the description: ");
             Description = Console.ReadLine();
 
+            while (Description == string.Empty) // Prevent user from entering in empty description
+            {
+                Console.WriteLine();
+                Console.WriteLine("Error. Description cannot be empty");
+                Console.WriteLine("Enter in the description: ");
+                Description = Console.ReadLine();
+            }
+
             Console.WriteLine("Enter in the pack: ");
             Pack = Console.ReadLine();
+
+            while (Pack == string.Empty) // Prevent user from entering in empty pack
+            {
+                Console.WriteLine();
+                Console.WriteLine("Error. Pack cannot be empty");
+                Console.WriteLine("Enter in the pack: ");
+                Pack = Console.ReadLine();
+            }
         }
 
         // Used to get the ID again if the user entered an ID

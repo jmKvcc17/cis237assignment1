@@ -26,7 +26,7 @@ namespace assignment1
             int newIndex;
             bool isEqual = false;
 
-            newIndex = (FindLastIndex() + 1); // returns index of non-null entries plus 1 for new entry
+            newIndex = (FindLastIndex()); // returns index of non-null entries plus 1 for new entry
 
             ui.GetAddInfo(ref id, ref description, ref pack); // uses ref to id, description, and pack to get input from user
 
